@@ -36,6 +36,7 @@
   <p>Hello, I am a robot!</p>
   <input id="Name" placeholder="Your name">
   <input id="Email" placeholder="Your email">
+  <input id="Feel" placeholder=" How do you feel?">
   <input id="submit" type="submit">
   
   
@@ -64,7 +65,8 @@
 
 	const Name = document.querySelector("#Name") 
 	const Email = document.querySelector("#Email")
-	document.querySelector('#submit').addEventListener('click', Submit)
+	const Feel = document.querySelector("#Feel")
+   document.querySelector('#submit').addEventListener('click', Submit)
 
 
 	function Submit() {
@@ -73,10 +75,12 @@
 	  set(ref(db, timestamp), {
 		  Name: Name.value,
 	      email: Email.value,
+		  Feel: Feel.value,
 	  });
 
 	  Name.value = ""
 	  Email.value = ""
+	  Feel.value = ""
 	}
 
 
